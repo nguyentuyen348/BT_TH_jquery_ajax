@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>`
+    <style>
+        p {
+            margin: 8px;
+            font-size: 20px;
+            color: blue;
+            cursor: pointer;
+        }
+        b {
+            text-decoration: underline;
+        }
+        button {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+
+<!--.find() :Lấy phần tử con của mỗi phần tử trong tập hợp phần tử phù hợp hiện tại, được lọc bởi bộ chọn, đối tượng jQuery hoặc phần tử.-->
+<p><span>Hello</span>, how are you?</p>
+<p>Me? I'm <span>good</span>.</p>
+<script>
+    $("p").find("span").css("color","blue")
+</script>
+
+
+<!--.hide():Ẩn các phần tử nào đó .-->
+<div id="clickme">
+    Click here for hide down string
+</div>
+<p style="color: red" id="string">i hate u</p>
+<script>
+    $( "#clickme" ).click(function() {
+        $( "#string" ).hide( "slow", function() {
+            alert( "hide" );
+        });
+    });
+</script>
+
+<!--.toggle():Hiển thị hoặc ẩn các phần tử mong muốn. -->
+<div id="clickme1">
+    Click here
+</div>
+<img id="img" src="b1.jpg" alt="" width="100" height="123">
+<script>
+    $( "#clickme1" ).click(function() {
+        $( "#img" ).toggle( "slow", function() {
+            //
+        });
+    });
+</script>
+
+<!--.animate Thực hiện hoạt ảnh tùy chỉnh của một tập hợp các thuộc tính CSS.-->
+<div id="clickme2">
+    Click here
+</div>
+<img id="img2" src="b1.jpg" alt="" width="100" height="123"
+     style="position:relative; left: 10px;">
+<script>
+    $("#clickme2").click(function (){
+        $("#img2").animate({
+            opacity:0.25,
+            left: "+=50",
+            height: "toggle"
+        }), 5000, function (){
+            //code
+        }
+    });
+</script>
+
+<!--.fadeIn(): Hiển thị các phần tử phù hợp bằng cách làm mờ chúng thành mờ đục.-->
+
+<!--.fadeOut(): Ẩn các phần tử phù hợp bằng cách làm mờ chúng thành trong suốt. -->
+<div id="clickme4">
+    Click here
+</div>
+<img id="img4" src="b1.jpg" alt="" width="100" height="123">
+<script>
+    $( "#clickme4" ).click(function() {
+        $( "#img4" ).fadeOut( "slow", function() {
+            // Animation complete.
+        });
+    })
+</script>
+
+<!--.slideUp(): Ẩn các phần tử phù hợp bằng một chuyển động trượt.-->
+<div id="clickme5">
+    Click here
+</div>
+<img id="img5" src="b1.jpg" alt="" width="100" height="123">
+<script>
+    $( "#clickme5" ).click(function() {
+        $( "#img5" ).slideUp( "slow", function() {
+            // Animation complete.
+        });
+    });
+</script>
+
+<!--.slideDown Hiển thị các phần tử phù hợp với một chuyển động trượt-->
+<div id="clickme6">
+    Click here
+</div>
+<img id="img6" src="b1.jpg" alt="" width="100" height="123">
+<script>
+//
+</script>
+<!--.html() Lấy nội dung HTML của phần tử đầu tiên trong tập hợp các phần tử đã so khớp hoặc đặt nội dung HTML của mọi phần tử được so khớp -->
+<p>
+<b>Click</b> to change the <span id="tag">html</span>
+</p>
+<p>
+    to a <span id="text">text</span> node.
+</p>
+<p>
+    This <button name="nada">button</button> does nothing.
+</p>
+
+<script>
+    $( "p" ).click(function() {
+        var htmlString = $( this ).html();
+        $( this ).text( htmlString );
+    });
+</script>
+
+</body>
+</html>
+
